@@ -1,0 +1,20 @@
+server:
+  port: 8088
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vanguard_game?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: Summer123$
+  profiles:
+    active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.vanguard.test.entities
+  configuration:
+    map-underscore-to-camel-case: true

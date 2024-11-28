@@ -1,0 +1,34 @@
+create table game_sales
+(
+    id           bigint auto_increment
+        primary key,
+    game_no      int            not null,
+    game_name    varchar(20)    not null,
+    game_code    varchar(5)     not null,
+    type         int            not null,
+    cost_price   decimal(10, 2) not null,
+    tax          decimal(10, 2) not null,
+    sale_price   decimal(10, 2) not null,
+    date_of_sale datetime       not null
+);
+
+create table import_progress
+(
+    id                int auto_increment
+        primary key,
+    file_name         varchar(255)                                null,
+    status            enum ('IN_PROGRESS', 'COMPLETED', 'FAILED') null,
+    total_records     int                                         null,
+    processed_records int                                         null,
+    created_at        timestamp default CURRENT_TIMESTAMP         null,
+    completed_at      timestamp                                   null
+);
+
+create table sales_aggregation
+(
+    aggregation_date date           not null,
+    game_no          int            not null,
+    total_sales      decimal(10, 2) not null,
+    total_games_sold int            not null,
+    primary key (aggregation_date, game_no)
+);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vanguard.test.mapper.ImportProgressMapper">
+    <resultMap id="BaseResultMap" type="com.vanguard.test.entities.ImportProgress">
+        <id column="id" property="id" />
+        <result property="fileName" column="file_name" />
+        <result property="status" column="status" />
+        <result property="totalRecord" column="total_record" />
+        <result property="processedRecord" column="processed_record" />
+        <result property="createdAt" column="created_at" />
+    </resultMap>
+</mapper>
